@@ -46,7 +46,7 @@ contract NFTCollection {
         require(_owners[_tokenId]!=address(0),"Token id is invalid");
         return _tokenApprovals[_tokenId];
     }
-    function transferFrom(address _from,address _to,uint256 _tokenId)external payable{
+    function transferFrom(address _from,address _to,uint256 _tokenId)public payable{
         address owner=ownerOf(_tokenId);
         require(msg.sender==owner || 
         getApproved(_tokenId)==msg.sender ||isApprovedForAll(owner,msg.sender),
@@ -64,5 +64,17 @@ contract NFTCollection {
         emit Transfer(_from , _to, _tokenId);
 
     }   
+    function safeTransferFrom(address _from,address _to,uint256 _tokenId,bytes memory _data)public{
+        transferFrom(_from,_to,_tokenId);
+        require(_checkOnERC721Received(),"receiver not implemented");
+    }
+    function _checkOnERC721Received()private pure returns(bool){
+        return true;
+    }
+
+    function safeTransferFrom(address _from,address _to,uint256 _tokenId)external payable{
+        safeTransferFrom(_from,_to,_tokenId,"");
+    }
+
 }
 
