@@ -1,13 +1,13 @@
-# Sample Hardhat Project
+# OnePiece NFts
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+git clone 
+and run ```npm i```
+```npx hardhat run scripts/OnePiece.js```
 
-Try running some of the following tasks:
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+Deploy
+```npx hardhat run scripts/onePiece.js --network goerli```
+
+
+
+
