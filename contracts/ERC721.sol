@@ -68,12 +68,19 @@ contract NFTCollection {
         transferFrom(_from,_to,_tokenId);
         require(_checkOnERC721Received(),"receiver not implemented");
     }
+    
+    //standard transferFrom 
+    //checks if onERC721 received is implemented when sending to smart contracts.
+    function safeTransferFrom(address _from,address _to,uint256 _tokenId)external payable{
+        safeTransferFrom(_from,_to,_tokenId,"");
+    }
     function _checkOnERC721Received()private pure returns(bool){
         return true;
     }
 
-    function safeTransferFrom(address _from,address _to,uint256 _tokenId)external payable{
-        safeTransferFrom(_from,_to,_tokenId,"");
+    // EIP165: check if a contract implements another interface
+    function supportsInterface(bytes4 interfaceId)public pure virtual returns (bool){
+        return interfaceId ==0x80ac58cd;
     }
 
 }
