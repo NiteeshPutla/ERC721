@@ -2,7 +2,7 @@
 pragma solidity^0.8.0;
 
 
-contract NFTCollection {
+contract ERC721 {
 
     mapping (address=>uint256) internal _balances; 
     mapping (uint256=>address) internal _owners;
