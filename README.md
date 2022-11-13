@@ -2,7 +2,7 @@
 
 git clone \
 and run ```npm i```\
-```npx hardhat run scripts/OnePiece.js```\
+```npx hardhat run scripts/OnePiece.js```
 
 
 Deploy\
