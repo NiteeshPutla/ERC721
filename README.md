@@ -1,4 +1,4 @@
-# OnePiece NFts
+# OnePiece NFTs
 
 git clone \
 and run ```npm i```\
