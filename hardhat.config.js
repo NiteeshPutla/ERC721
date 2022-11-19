@@ -1,4 +1,9 @@
+require('dotenv').config()
+
 require("@nomicfoundation/hardhat-toolbox");
+
+
+const PRIVATE_KEY = process.env.PRIVATE_KEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -6,7 +11,7 @@ module.exports = {
   networks:{
     goerli:{
       url:"https://eth-goerli.g.alchemy.com/v2/KSM93xJEEY9dwqbegaro7RrB8sEiNsyu",
-      accounts:["c0f80f819b6e946774a72aad90a2b43862421ffbda4e72b97e633e4d5ef99609"]
+      accounts:[PRIVATE_KEY],
     },
   },
   etherscan:{
